@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-BOOK SITE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/67/18/22/671822c2f63dd5f65d8fd15c9710420b.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+        }
+        nav {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #000509;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(249, 246, 246, 0.9);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center
+        }
+        h1{
+            color: #00040a;
+        }
+        h2{
+            color: #f4f6f9;
+        }
+        h3{
+            color: #00040a;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #0d0000;
+            background-color:#fffdfd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #9cc7f1;
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #f7f8f9;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .book-list, .review-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .book-list li, .review-list li {
+            background-color: #faf6f6;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(250, 249, 249, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>E-BOOK SITE</h2>
+        <nav>
+            <a href="#" id="homeNav">Home</a>
+            <a href="#" id="booksNav">View Available Books</a>
+            <a href="#" id="searchNav">Search Books</a>
+            <a href="#" id="authorNav">View Author Details</a>
+            <a href="#" id="reviewsNav">Book Reviews</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="homeSection" class="section active">
+            <h1>Welcome to the E-Book Reader</h1>
+            <p>Welcome to E-Book Reader, your go-to platform for discovering, exploring, and enjoying your favorite books. Whether you're a passionate bibliophile or a casual reader, our platform is designed to make your reading experience as seamless and enjoyable as possible. With E-Book Reader, you have the power to access a curated selection of books, all at your fingertips.</p>
+            <p>On E-Book Reader, you can easily browse through our collection by viewing the available books, allowing you to quickly find your next great read. Our platform also lets you add new books to the collection, making it simple to expand your personal library and share your favorites with others. If you're searching for something specific, our search feature ensures you can quickly locate the exact book you're looking for.</p>
+            <p>In addition to books, E-Book Reader offers insights into the minds behind the stories you love. With our view author details feature, you can learn more about the authors whose works you enjoy, gaining a deeper appreciation for their creative process and the inspiration behind their writing. This feature helps you connect with the books on a more personal level, understanding the journeys of the authors who bring these stories to life.</p>
+            <p>To enhance your reading experience, E-Book Reader also provides access to book reviews, offering valuable insights from other readers. These reviews help guide your reading choices, providing different perspectives and opinions on the books in our collection. Whether you're looking for a popular recommendation or a hidden gem, our reviews can help you make informed decisions about what to read next.</p> 
+            <p>We invite you to explore, discover, and enjoy the many features we offer. With E-Book Reader, your next literary adventure is just a click away, and we’re here to support you every step of the way.</p>
+        </div>
+
+        <div id="booksSection" class="section">
+            <h3>Available Books</h3>
+            <ul id="bookList" class="book-list">
+                <!-- Books will be dynamically added here -->
+            </ul>
+            <button id="addBookBtn">Add Book</button>
+            <div id="bookForm" style="display:none;">
+                <h3>Add New Book</h3>
+                <input type="text" id="bookTitle" placeholder="Book Title">
+                <input type="text" id="bookAuthor" placeholder="Author">
+                <button id="submitBookBtn">Submit</button>
+            </div>
+        </div>
+
+        <div id="searchSection" class="section">
+            <h3>Search Books</h3>
+            <input type="text" id="searchBooks" placeholder="Search books...">
+        </div>
+
+        <div id="authorSection" class="section">
+            <h3>Author Details</h3>
+            <p><strong>Author:</strong> Jane Doe</p>
+            <p><strong>Biography:</strong> Jane Doe is a renowned author with expertise in programming and web development. She has written several books and articles on these topics and is known for her clear and engaging writing style.</p>
+            <p><strong>Contact:</strong> jane.doe@gmail.com</p>
+            <p><strong>Author:</strong> John Smith</p>
+            <p><strong>Biography:</strong> John Smith is a seasoned software engineer and author, specializing in programming languages and software development. With a passion for teaching, John has authored numerous books that have become essential resources for beginners in programming.</p>
+            <p><strong>Contact:</strong> john.smith@email.com</p>
+            <p><strong>Author:</strong> Emily Johnson</p>
+            <p><strong>Biography:</strong> Emily Johnson is an expert in JavaScript and front-end development. She has extensive experience in web development and has written advanced guides and tutorials that are widely used by developers around the world. </p>
+            <p><strong>Contact:</strong> emily.johnson@email.com</p>
+            <p><strong>Author:</strong> Michael Brown</p>
+            <p><strong>Biography:</strong> Michael Brown is a well-known web developer and author, recognized for his in-depth knowledge of web development practices. His works focus on best practices, modern techniques, and industry standards in web development. </p>
+            <p><strong>Contact:</strong> michael.brown@email.com</p> 
+            <p><strong>Author:</strong> F. Scott Fitzgerald</p>
+            <p><strong>Biography:</strong> F. Scott Fitzgerald was an American novelist and short story writer, widely regarded as one of the greatest American writers of the 20th century. His works, including "The Great Gatsby," explore themes of decadence and the American Dream. </p>
+            <p><strong>Contact:</strong>  f.scott.fitzgerald@email.com</p> 
+            <p><strong>Author:</strong> Harper Lee</p>
+            <p><strong>Biography:</strong> Harper Lee was an American novelist, best known for her Pulitzer Prize-winning novel "To Kill a Mockingbird." Her work explores racial injustice and moral growth, making her a significant figure in American literature. </p>
+            <p><strong>Contact:</strong> harper.lee@email.com</p> 
+            <p><strong>Author:</strong> Yuval Noah Harari</p>
+            <p><strong>Biography:</strong> Yuval Noah Harari is an Israeli historian and author, best known for his book "Sapiens: A Brief History of Humankind." His work delves into the history of humankind, offering profound insights into the evolution of human societies. </p>
+            <p><strong>Contact:</strong>  yuval.harari@email.com</p> 
+            <p><strong>Author:</strong> Tara Westover</p>
+            <p><strong>Biography:</strong> Tara Westover is an American author and historian, known for her memoir "Educated." Her book recounts her journey from growing up in a strict and isolated environment to pursuing education and self-discovery. </p>
+            <p><strong>Contact:</strong>  tara.westover@email.com</p> 
+            <p><strong>Author:</strong> Michelle Obama</p>
+            <p><strong>Biography:</strong> Michelle Obama is an American attorney, author, and former First Lady of the United States. Her memoir "Becoming" is a reflection on her personal and public life, offering inspiration and insight into her experiences. </p>
+            <p><strong>Contact:</strong> michelle.obama@email.com</p> 
+            <p><strong>Author:</strong> Frank Herbert</p>
+            <p><strong>Biography:</strong> Frank Herbert was an American science fiction writer, best known for his epic novel "Dune." His work is celebrated for its complex themes, intricate world-building, and influence on the science fiction genre. </p>
+            <p><strong>Contact:</strong> frank.herbert@email.com</p> 
+            <p><strong>Author:</strong> William Gibson</p>
+            <p><strong>Biography:</strong> William Gibson is a Canadian-American speculative fiction writer, credited with pioneering the cyberpunk genre. His novel "Neuromancer" is a seminal work in science fiction, exploring the implications of technology on society. </p>
+            <p><strong>Contact:</strong> william.gibson@email.com</p> 
+            <p><strong>Author:</strong> Ursula K. Le Guin</p>
+            <p><strong>Biography:</strong> Ursula K. Le Guin was an American author known for her works of science fiction and fantasy. Her novel "The Left Hand of Darkness" is a classic that challenges traditional gender norms and explores themes of identity and culture. </p>
+            <p><strong>Contact:</strong> ursula.leguin@email.com</p> 
+            <p><strong>Author:</strong> J.R.R. Tolkien</p>
+            <p><strong>Biography:</strong> J.R.R. Tolkien was an English writer, poet, and philologist, best known for his high-fantasy works "The Hobbit" and "The Lord of the Rings." His writings have had a lasting impact on the fantasy genre. </p>
+            <p><strong>Contact:</strong> jrr.tolkien@email.com</p> 
+            <p><strong>Author:</strong> George R.R. Martin </p>
+            <p><strong>Biography:</strong> George R.R. Martin is an American novelist and short story writer, best known for his "A Song of Ice and Fire" series, which inspired the television series "Game of Thrones." His work is known for its complex characters and intricate plots. </p>
+            <p><strong>Contact:</strong> george.martin@email.com</p> 
+            <p><strong>Author:</strong> Brandon Sanderson</p>
+            <p><strong>Biography:</strong> Brandon Sanderson is an American fantasy and science fiction writer, known for his "Mistborn" series and for completing Robert Jordan's "The Wheel of Time" series. His work is praised for its innovative magic systems and world-building.</p>
+            <p><strong>Contact:</strong> brandon.sanderson@email.com</p> 
+            <p><strong>Author:</strong> Gillian Flynn</p>
+            <p><strong>Biography:</strong> Gillian Flynn is an American author and screenwriter, known for her dark and suspenseful thrillers. Her novel "Gone Girl" became a global bestseller, recognized for its psychological depth and twisty narrative.</p>
+            <p><strong>Contact:</strong> gillian.flynn@email.com</p> 
+            <p><strong>Author:</strong> Stieg Larsson</p>
+            <p><strong>Biography:</strong> Stieg Larsson was a Swedish journalist and author, best known for his "Millennium" series, starting with "The Girl with the Dragon Tattoo." His works are known for their gripping plots and strong social commentary.</p>
+            <p><strong>Contact:</strong> stieg.larsson@email.com</p> 
+            <p><strong>Author:</strong> Liane Moriarty</p>
+            <p><strong>Biography:</strong> Liane Moriarty is an Australian author, known for her contemporary fiction that often explores the complexities of relationships. Her novel "Big Little Lies" became a major success, both as a book and a television series.</p>
+            <p><strong>Contact:</strong> liane.moriarty@email.com</p> 
+            <p><strong>Author:</strong> Anthony Doerr</p>
+            <p><strong>Biography:</strong> Anthony Doerr is an American author known for his lyrical and evocative prose. His novel "All the Light We Cannot See" won the Pulitzer Prize for Fiction and is celebrated for its depiction of World War II and human resilience.</p>
+            <p><strong>Contact:</strong> anthony.doerr@email.com</p> 
+            <p><strong>Author:</strong> Markus Zusak</p>
+            <p><strong>Biography:</strong> Markus Zusak is an Australian author best known for his novel "The Book Thief," which has been translated into numerous languages and adapted into a film. His work often blends historical fiction with poignant storytelling.</p>
+            <p><strong>Contact:</strong> markus.zusak@email.com</p> 
+            <p><strong>Author:</strong> Kristin Hannah</p>
+            <p><strong>Biography:</strong> Kristin Hannah is an American author of historical fiction, best known for her novel "The Nightingale," which tells the story of two sisters in Nazi-occupied France. Her work is known for its emotional depth and strong characters.</p>
+            <p><strong>Contact:</strong> kristin.hannah@email.com</p> 
+            <p><strong>Author:</strong> James Clear</p>
+            <p><strong>Biography:</strong> James Clear is an American author, entrepreneur, and speaker, best known for his book "Atomic Habits." His work focuses on personal development, habit formation, and productivity, offering practical advice for achieving goals.</p>
+            <p><strong>Contact:</strong> james.clear@email.com</p> 
+            <p><strong>Author:</strong> Charles Duhigg</p>
+            <p><strong>Biography:</strong> Charles Duhigg is an American journalist and author, known for his book "The Power of Habit." His work explores the science of habit formation and its impact on personal and professional success.</p>
+            <p><strong>Contact:</strong> charles.duhigg@email.com</p> 
+            <p><strong>Author:</strong> Dale Carnegie</p>
+            <p><strong>Biography:</strong> Dale Carnegie was an American writer and lecturer, known for his self-improvement books, including "How to Win Friends and Influence People." His principles of communication and leadership have had a lasting influence on personal development.</p>
+            <p><strong>Contact:</strong> dale.carnegie@email.com</p> 
+    </div>
+
+        <div id="reviewsSection" class="section">
+            <h3>Book Reviews</h3>
+            <ul id="reviewList" class="review-list">
+                <!-- Reviews will be dynamically added here -->
+            </ul>
+            <button id="addReviewBtn">Add Review</button>
+            <div id="reviewForm" style="display:none;">
+                <h3>Add New Review</h3>
+                <input type="text" id="reviewTitle" placeholder="Book Title">
+                <input type="text" id="reviewContent" placeholder="Review">
+                <button id="submitReviewBtn">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Handle navigation
+        document.getElementById('homeNav').addEventListener('click', function() {
+            showSection('homeSection');
+        });
+        document.getElementById('booksNav').addEventListener('click', function() {
+            showSection('booksSection');
+            renderBooks();  // Show the list of books when navigating to this section
+        });
+        document.getElementById('searchNav').addEventListener('click', function() {
+            showSection('searchSection');
+        });
+        document.getElementById('authorNav').addEventListener('click', function() {
+            showSection('authorSection');
+        });
+        document.getElementById('reviewsNav').addEventListener('click', function() {
+            showSection('reviewsSection');
+        });
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Books section functionality
+        let books = [
+            { title: 'An Introduction to Programming', author: 'John Smith' },
+            { title: 'Advanced JavaScript', author: 'Emily Johnson' },
+            { title: 'Web Development Best Practices', author: 'Michael Brown' },
+            { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald'},
+            { title: 'To Kill a Mockingbird', author: 'Harper Lee'},
+            { title: 'Sapiens: A Brief History of Humankind', author: 'Yuval Noah Harari' },
+            { title: 'Educated', author: 'Tara Westover' },
+            { title: 'Becoming', author: 'Michelle Obama' },
+            { title: 'Dune', author: 'Frank Herbert'},
+            { title: 'Neuromancer', author: 'William Gibson'},
+            { title: 'The Left Hand of Darkness ', author: 'Ursula K. Le Guin' },
+            { title: 'The Hobbit', author: 'J.R.R. Tolkien' },
+            { title: 'A Game of Thrones', author: 'George R.R. Martin' },
+            { title: 'Mistborn: The Final Empire', author: 'Brandon Sanderson'},
+            { title: 'Gone Girl', author: 'Gillian Flynn'},
+            { title: 'The Girl with the Dragon Tattoo', author: 'Stieg Larsson' },
+            { title: 'Big Little Lies', author: ' Liane Moriarty' },
+            { title: 'All the Light We Cannot See ', author: 'Anthony Doerr' },
+            { title: 'The Book Thief', author: 'Markus Zusak'},
+            { title: 'The Nightingale', author: 'Kristin Hannah'},
+            { title: 'Atomic Habits', author: 'James Clear' },
+            { title: 'The Power of Habit ', author: 'Charles Duhigg' },
+            { title: 'How to Win Friends and Influence People', author: 'Dale Carnegie' },
+        ];
+
+        function renderBooks() {
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = '';
+            books.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = `${book.title} by ${book.author}`;
+                bookList.appendChild(li);
+            });
+        }
+
+        document.getElementById('addBookBtn').addEventListener('click', function() {
+            document.getElementById('bookForm').style.display = 'block';
+        });
+
+        document.getElementById('submitBookBtn').addEventListener('click', function() {
+            const title = document.getElementById('bookTitle').value;
+            const author = document.getElementById('bookAuthor').value;
+            if (title && author) {
+                books.push({ title, author });
+                renderBooks();
+                document.getElementById('bookForm').style.display = 'none';
+                document.getElementById('bookTitle').value = '';
+                document.getElementById('bookAuthor').value = '';
+            } else {
+                alert('Please enter both title and author.');
+            }
+        });
+
+        document.getElementById('searchBooks').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const filteredBooks = books.filter(book => book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query));
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = '';
+            filteredBooks.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = `${book.title} by ${book.author}`;
+                bookList.appendChild(li);
+            });
+        });
+
+        // Reviews section functionality
+        let reviews = [
+            { title: 'An Introduction to Programming', review: 'Great book for beginners!' },
+            { title: 'Advanced JavaScript', review: 'Very insightful for advanced developers.' }
+        ];
+
+        function renderReviews() {
+            const reviewList = document.getElementById('reviewList');
+            reviewList.innerHTML = '';
+            reviews.forEach(review => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${review.title}:</strong> ${review.review}`;
+                reviewList.appendChild(li);
+            });
+        }
+
+        document.getElementById('addReviewBtn').addEventListener('click', function() {
+            document.getElementById('reviewForm').style.display = 'block';
+        });
+
+        document.getElementById('submitReviewBtn').addEventListener('click', function() {
+            const title = document.getElementById('reviewTitle').value;
+            const content = document.getElementById('reviewContent').value;
+            if (title && content) {
+                reviews.push({ title, review: content });
+                renderReviews();
+                document.getElementById('reviewForm').style.display = 'none';
+                document.getElementById('reviewTitle').value = '';
+                document.getElementById('reviewContent').value = '';
+            } else {
+                alert('Please enter both title and review.');
+            }
+        });
+
+        // Initialize the home section
+        showSection('homeSection');
+    </script>
+</body>
+</html>
+
